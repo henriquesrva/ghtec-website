@@ -1053,25 +1053,12 @@ header.scrolled .nav-cta {
 /* #region ANIMAÇÃO DE ENTRADA */
 /* ========================================================= */
 
-.trust-metric,
-.clientes-wrapper {
-  opacity: 0;
-  transform: translateY(14px);
-  transition:
-    opacity 0.72s ease,
-    transform 0.72s ease;
-  will-change: opacity, transform;
-}
-
 .cliente-reveal {
   opacity: 0;
   transform: translateY(14px);
   transition:
     opacity 0.72s ease,
-    transform 0.22s var(--ease-out),
-    border-color 0.22s ease,
-    box-shadow 0.22s ease,
-    background 0.22s ease;
+    transform 0.72s cubic-bezier(.22, 1, .36, 1);
   will-change: opacity, transform;
 }
 
@@ -1079,35 +1066,9 @@ header.scrolled .nav-cta {
 ESTADO VISÍVEL
 ========================================================= */
 
-.clientes-section.clientes-visible .trust-metric,
-.clientes-section.clientes-visible .clientes-wrapper,
 .clientes-section.clientes-visible .cliente-reveal {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* =========================================================
-DELAYS — MÉTRICAS
-========================================================= */
-
-.trust-metric:nth-child(1) {
-  transition-delay: 0.08s;
-}
-
-.trust-metric:nth-child(2) {
-  transition-delay: 0.16s;
-}
-
-.trust-metric:nth-child(3) {
-  transition-delay: 0.24s;
-}
-
-/* =========================================================
-DELAY — PAINEL PRINCIPAL
-========================================================= */
-
-.clientes-wrapper {
-  transition-delay: 0.30s;
 }
 
 /* =========================================================
@@ -1115,37 +1076,36 @@ DELAYS — LOGOS
 ========================================================= */
 
 .cliente-reveal:nth-child(1) {
-  transition-delay: 0.36s;
+  transition-delay: 0.34s;
 }
 
 .cliente-reveal:nth-child(2) {
-  transition-delay: 0.40s;
-}
-
-.cliente-reveal:nth-child(3) {
   transition-delay: 0.44s;
 }
 
+.cliente-reveal:nth-child(3) {
+  transition-delay: 0.54s;
+}
+
 .cliente-reveal:nth-child(4) {
-  transition-delay: 0.48s;
-}
-
-.cliente-reveal:nth-child(5) {
-  transition-delay: 0.52s;
-}
-
-.cliente-reveal:nth-child(6) {
-  transition-delay: 0.56s;
-}
-
-.cliente-reveal:nth-child(7) {
-  transition-delay: 0.60s;
-}
-
-.cliente-reveal:nth-child(8) {
   transition-delay: 0.64s;
 }
 
+.cliente-reveal:nth-child(5) {
+  transition-delay: 0.74s;
+}
+
+.cliente-reveal:nth-child(6) {
+  transition-delay: 0.84s;
+}
+
+.cliente-reveal:nth-child(7) {
+  transition-delay: 0.94s;
+}
+
+.cliente-reveal:nth-child(8) {
+  transition-delay: 1.04s;
+}
 
 /* =========================================================
 ACESSIBILIDADE
@@ -1153,8 +1113,6 @@ ACESSIBILIDADE
 
 @media (prefers-reduced-motion: reduce) {
 
-  .trust-metric,
-  .clientes-wrapper,
   .cliente-reveal {
     opacity: 1;
     transform: none;
