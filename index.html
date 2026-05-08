@@ -110,12 +110,24 @@
             <h3>Entre hospitais e clínicas atendidos</h3>
 
             <div class="clientes-grid">
-              <div class="cliente-card cliente-TierA"><img src="assets/clientes/santa-casa.png" alt="Santa Casa BH" loading="lazy"></div>
-              <div class="cliente-card cliente-TierA"><img src="assets/clientes/joao-23.png" alt="Hospital João XXIII" loading="lazy"></div>
-              <div class="cliente-card cliente-TierA"><img src="assets/clientes/ipsemg.png" alt="IPSEMG" loading="lazy"></div>
-              <div class="cliente-card cliente-TierA"><img src="assets/clientes/unimed.png" alt="Unimed" loading="lazy"></div>
-              <div class="cliente-card cliente-TierA"><img src="assets/clientes/sao-lucas.png" alt="São Lucas" loading="lazy"></div>
-              <div class="cliente-card cliente-TierA"><img src="assets/clientes/hapvida.png" alt="Hapvida" loading="lazy"></div>
+              <div class="cliente-reveal">
+                <div class="cliente-card cliente-TierA"><img src="assets/clientes/santa-casa.png" alt="Santa Casa BH" loading="lazy"></div>
+              </div>
+              <div class="cliente-reveal">
+                <div class="cliente-card cliente-TierA"><img src="assets/clientes/joao-23.png" alt="Hospital João XXIII" loading="lazy"></div>
+              </div>
+              <div class="cliente-reveal">
+                <div class="cliente-card cliente-TierA"><img src="assets/clientes/ipsemg.png" alt="IPSEMG" loading="lazy"></div>
+              </div>
+              <div class="cliente-reveal">
+                <div class="cliente-card cliente-TierA"><img src="assets/clientes/unimed.png" alt="Unimed" loading="lazy"></div>
+              </div>
+              <div class="cliente-reveal">
+                <div class="cliente-card cliente-TierA"><img src="assets/clientes/sao-lucas.png" alt="São Lucas" loading="lazy"></div>
+              </div>
+              <div class="cliente-reveal">
+                <div class="cliente-card cliente-TierA"><img src="assets/clientes/hapvida.png" alt="Hapvida" loading="lazy"></div>
+              </div>
             </div>
           </div>
 
@@ -123,9 +135,15 @@
             <h3>Operadores de CME</h3>
 
             <div class="clientes-grid clientes-grid-operadoras">
-              <div class="cliente-card cliente-operacional"><img src="assets/clientes/3albe.png" alt="3ALBE" loading="lazy"></div>
-              <div class="cliente-card cliente-operacional"><img src="assets/clientes/ageis-cme.png" alt="Ageis CME" loading="lazy"></div>
-              <div class="cliente-card cliente-operacional"><img src="assets/clientes/unisteril.webp" alt="Unistéril" loading="lazy"></div>
+              <div class="cliente-reveal">
+                <div class="cliente-card cliente-operacional"><img src="assets/clientes/3albe.png" alt="3ALBE" loading="lazy"></div>
+              </div>
+              <div class="cliente-reveal">
+                <div class="cliente-card cliente-operacional"><img src="assets/clientes/ageis-cme.png" alt="Ageis CME" loading="lazy"></div>
+              </div>
+              <div class="cliente-reveal">
+                <div class="cliente-card cliente-operacional"><img src="assets/clientes/unisteril.webp" alt="Unistéril" loading="lazy"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -373,25 +391,29 @@
       }
     });
 
-    // Menu mobile
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
+  document.addEventListener("DOMContentLoaded", () => {
+  const clientesSection = document.querySelector(".clientes-section");
 
-    hamburger.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
+  if (!clientesSection) {
+    console.log("Seção de clientes não encontrada para observação de interseção.");
+    return;
+  } 
 
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        clientesSection.classList.add("clientes-visible");
+        observer.unobserve(clientesSection);
+      }
     });
+  }, {
+    threshold: 0,
+    rootMargin: "0px 0px -10% 0px"
+  });
+
+  observer.observe(clientesSection);
+});
+
   </script>
   <!-- #endregion SCRIPTS -->
 </body>

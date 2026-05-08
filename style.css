@@ -66,18 +66,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 16% 8%, rgba(110, 224, 168, 0.12), transparent 32%),
-        radial-gradient(circle at 84% 28%, rgba(11, 122, 75, 0.08), transparent 36%),
-        linear-gradient(180deg, #0f1f19 0%, #eef3f1 46%, #ffffff 100%);
-      pointer-events: none;
-    }
-
     body.menu-open {
       overflow: hidden;
     }
@@ -828,228 +816,6 @@ header.scrolled .nav-cta {
 /* ---------------------------------------- *//* ---------------------------------------- */
 /* ---------------------------------------- *//* ---------------------------------------- */
 
-   /* #region CSS-CLIENTES 
-    .clientes-section {
-      position: relative;
-      z-index: 5;
-      padding: 78px 0 112px;
-      background:
-        radial-gradient(circle at 50% -8%, rgba(11, 122, 75, 0.13), transparent 40%),
-        radial-gradient(circle at 14% 72%, rgba(255,255,255,0.85), transparent 38%),
-        linear-gradient(to bottom, #e9f0ed 0%, #eef3f1 44%, #e8efec 100%);
-      border-bottom: 1px solid rgba(6, 39, 29, 0.08);
-      overflow: hidden;
-    }
-
-    .clientes-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(11, 122, 75, 0.034) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(11, 122, 75, 0.034) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.36), transparent 76%);
-      pointer-events: none;
-    }
-
-    .clientes-section::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: min(940px, 90vw);
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, transparent, rgba(11,122,75,0.26), transparent);
-      pointer-events: none;
-    }
-
-    .clientes-section .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .clientes-section .section-header {
-      margin-bottom: 0;
-    }
-
-    .clientes-section .section-header h2 {
-      max-width: 760px;
-    }
-
-    .clientes-section .section-header p {
-      color: #4d665b;
-      font-weight: 500;
-    }
-
-    .trust-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      max-width: 780px;
-      margin: 30px auto 0;
-    }
-
-    .trust-metric {
-      padding: 14px 16px;
-      border: 1px solid rgba(11, 122, 75, 0.13);
-      border-radius: 16px;
-      background: rgba(255,255,255,0.58);
-      box-shadow: 0 12px 32px rgba(8,31,22,0.045);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      text-align: left;
-    }
-
-    .trust-metric strong {
-      display: block;
-      color: var(--green-900);
-      font-family: 'Manrope', sans-serif;
-      font-size: 1.18rem;
-      line-height: 1;
-      margin-bottom: 5px;
-      letter-spacing: -0.3px;
-    }
-
-    .trust-metric span {
-      display: block;
-      color: #53685f;
-      font-size: 0.88rem;
-      line-height: 1.35;
-    }
-
-    .clientes-wrapper {
-      position: relative;
-      display: grid;
-      grid-template-columns: 2.4fr 1.1fr;
-      gap: 34px;
-      align-items: start;
-      margin-top: 48px;
-    }
-
-    .clientes-wrapper::after {
-      content: "";
-      position: absolute;
-      top: 5px;
-      bottom: 0;
-      left: calc(68%);
-      width: 1px;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(11, 122, 75, 0.38) 18%,
-        rgba(11, 122, 75, 0.22) 72%,
-        transparent 100%
-      );
-      pointer-events: none;
-    }
-
-    .clientes-bloco {
-      margin-top: 0;
-    }
-
-    .clientes-bloco h3 {
-      margin-bottom: 18px;
-      color: #087648;
-      font-size: 0.86rem;
-      font-weight: 900;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    .clientes-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .clientes-grid-operadoras {
-      grid-template-columns: 1fr;
-    }
-
-    .cliente-card {
-      position: relative;
-      height: var(--cliente-card-height);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 24px;
-      border: 1px solid rgba(11, 122, 75, 0.16);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.84);
-      box-shadow: 0 14px 34px rgba(6, 39, 29, 0.055);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      overflow: hidden;
-      transition:
-        transform 0.22s var(--ease-out),
-        border-color 0.22s ease,
-        box-shadow 0.22s ease,
-        background 0.22s ease;
-    }
-
-    .cliente-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 0%, rgba(110, 224, 168, 0.14), transparent 46%);
-      opacity: 0;
-      transition: opacity 0.22s ease;
-      pointer-events: none;
-    }
-
-    .cliente-card img {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 150px;
-      max-height: 68px;
-      height: auto;
-      object-fit: contain;
-      filter: saturate(0.92) contrast(1.02);
-      opacity: 0.95;
-      transition: filter 0.22s ease, opacity 0.22s ease, transform 0.22s ease;
-    }
-
-    .cliente-TierA {
-      background: rgba(255, 255, 255, 0.90);
-      border-color: rgba(11, 122, 75, 0.24);
-      box-shadow: 0 16px 38px rgba(11, 122, 75, 0.06);
-    }
-
-    .cliente-TierA img {
-      max-width: 172px;
-      max-height: 82px;
-      filter: saturate(1) contrast(1.02);
-      opacity: 1;
-    }
-
-    .cliente-operacional img {
-      max-width: 165px;
-      max-height: 78px;
-    }
-
-    .cliente-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(11, 122, 75, 0.42);
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 20px 46px rgba(6, 39, 29, 0.09);
-    }
-
-    .cliente-card:hover::before {
-      opacity: 1;
-    }
-
-    .cliente-card:hover img {
-      filter: saturate(1.03) contrast(1.04);
-      opacity: 1;
-      transform: scale(1.018);
-    }
-
-     #endregion */
-
     /* #region CSS-CLIENTES */
 .clientes-section {
   position: relative;
@@ -1271,21 +1037,135 @@ header.scrolled .nav-cta {
 }
 
 .cliente-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(11, 122, 75, 0.42);
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 22px 50px rgba(6, 39, 29, 0.095);
-}
-
-.cliente-card:hover::before {
-  opacity: 1;
+  transform: translateY(-1px);
+  border-color: rgba(11, 122, 75, 0.22);
+  background: rgba(255, 255, 255, 0.985);
+  box-shadow: 0 10px 24px rgba(6, 39, 29, 0.045);
 }
 
 .cliente-card:hover img {
-  filter: saturate(1.04) contrast(1.04);
+  filter: saturate(1.015) contrast(1.015);
   opacity: 1;
-  transform: scale(1.018);
+  transform: scale(1.008);
 }
+
+/* ========================================================= */
+/* #region ANIMAÇÃO DE ENTRADA */
+/* ========================================================= */
+
+.trust-metric,
+.clientes-wrapper {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.72s ease,
+    transform 0.72s ease;
+  will-change: opacity, transform;
+}
+
+.cliente-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.72s ease,
+    transform 0.22s var(--ease-out),
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+  will-change: opacity, transform;
+}
+
+/* =========================================================
+ESTADO VISÍVEL
+========================================================= */
+
+.clientes-section.clientes-visible .trust-metric,
+.clientes-section.clientes-visible .clientes-wrapper,
+.clientes-section.clientes-visible .cliente-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+DELAYS — MÉTRICAS
+========================================================= */
+
+.trust-metric:nth-child(1) {
+  transition-delay: 0.08s;
+}
+
+.trust-metric:nth-child(2) {
+  transition-delay: 0.16s;
+}
+
+.trust-metric:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
+/* =========================================================
+DELAY — PAINEL PRINCIPAL
+========================================================= */
+
+.clientes-wrapper {
+  transition-delay: 0.30s;
+}
+
+/* =========================================================
+DELAYS — LOGOS
+========================================================= */
+
+.cliente-reveal:nth-child(1) {
+  transition-delay: 0.36s;
+}
+
+.cliente-reveal:nth-child(2) {
+  transition-delay: 0.40s;
+}
+
+.cliente-reveal:nth-child(3) {
+  transition-delay: 0.44s;
+}
+
+.cliente-reveal:nth-child(4) {
+  transition-delay: 0.48s;
+}
+
+.cliente-reveal:nth-child(5) {
+  transition-delay: 0.52s;
+}
+
+.cliente-reveal:nth-child(6) {
+  transition-delay: 0.56s;
+}
+
+.cliente-reveal:nth-child(7) {
+  transition-delay: 0.60s;
+}
+
+.cliente-reveal:nth-child(8) {
+  transition-delay: 0.64s;
+}
+
+
+/* =========================================================
+ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .trust-metric,
+  .clientes-wrapper,
+  .cliente-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+}
+
+/* #endregion */
+
 /* #endregion */
 
 /* ---------------------------------------- *//* ---------------------------------------- */
