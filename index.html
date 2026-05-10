@@ -440,6 +440,30 @@
   observer.observe(clientesSection);
 });
 
+  // Outcome section — reveal em stagger + glow breathing
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const outcomeSection = document.querySelector(".outcome-section");
+    if (!outcomeSection) return;
+
+    outcomeSection.classList.add("outcome-animate");
+
+    const outcomeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          outcomeSection.classList.add("is-visible");
+          outcomeObserver.unobserve(outcomeSection);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: "0px 0px -4% 0px"
+    });
+
+    outcomeObserver.observe(outcomeSection);
+  });
+
   </script>
   <!-- #endregion SCRIPTS -->
 </body>
