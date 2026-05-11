@@ -268,37 +268,31 @@ header {
   width: 100%;
   z-index: 50;
 
-  background: linear-gradient(
-  to bottom,
-  rgba(15, 31, 25, 0.80),
-  rgba(15, 31, 25, 0.75),
-  rgba(15, 31, 25, 0.65),
-  transparent
-);
-
-  border-bottom: none;
+  background: rgba(3, 24, 18, 0.32);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
   box-shadow: none;
 
   transition:
-    background 0.4s ease,
-    box-shadow 0.4s ease,
-    border-color 0.4s ease;
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 header.mid {
-  background: rgba(15, 31, 25, 0.28);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(2px);
+  background: rgba(3, 24, 18, 0.48);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 header.scrolled {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(226, 238, 232, 0.95);
-  box-shadow:
-    0 1px 0 rgba(0, 0, 0, 0.04),
-    0 8px 24px rgba(8, 92, 57, 0.096);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(15, 40, 30, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.045);
 }
 
 .navbar {
@@ -332,12 +326,12 @@ nav {
 
 nav a {
   position: relative;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.84);
   transition: color 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
 
 header.scrolled nav a {
-  color: #2f443a;
+  color: #17362b;
 }
 
 nav a:not(.nav-cta)::after {
@@ -363,22 +357,29 @@ nav a:not(.nav-cta):hover::after {
 }
 
 .nav-cta {
-  padding: 11px 20px;
+  padding: 10px 18px;
   border-radius: 12px;
   color: var(--white);
-  background: var(--green-600);
-  font-weight: 800;
-  box-shadow: 0 10px 22px rgba(11, 122, 75, 0.18);
+  background: #008f5a;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 143, 90, 0.14);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .nav-cta:hover {
   color: var(--white);
-  background: #08663e;
+  background: #00a668;
   transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 143, 90, 0.20);
 }
 
 header.scrolled .nav-cta {
   color: var(--white);
+  background: #007f50;
+  border: 1px solid rgba(0, 127, 80, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 127, 80, 0.14);
 }
 
 /* #endregion */
@@ -399,9 +400,14 @@ header.scrolled .nav-cta {
   background:
     linear-gradient(
       90deg,
-      rgba(15, 31, 25, 0.96) 0%,
-      rgba(15, 31, 25, 0.85) 42%,
-      rgba(15, 31, 25, 0.35) 100%
+      rgba(0, 18, 13, 0.88) 0%,
+      rgba(0, 30, 22, 0.62) 42%,
+      rgba(0, 28, 20, 0.34) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 20, 15, 0.38) 0%,
+      rgba(0, 20, 15, 0.60) 100%
     ),
     url("./assets/fotos/foto-tecnico-manutencao.png") center right / cover no-repeat;
 
@@ -558,65 +564,66 @@ header.scrolled .nav-cta {
     }
 
     .btn-primary {
-      background: var(--green-600);
+      background: #009f64;
       color: var(--white);
-      box-shadow: 0 14px 30px rgba(11, 122, 75, 0.22);
+      box-shadow: 0 14px 34px rgba(0, 159, 100, 0.24);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      background: #08663e;
+      background: #00ad6d;
+      box-shadow: 0 18px 42px rgba(0, 159, 100, 0.30);
     }
 
 
 .btn-secondary {
-  background: #ffffff;
-  color: var(--green-700);
-
-  border: 1.5px solid rgba(11, 122, 75, 0.25);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06); /* um pouco mais presente */
+  background: rgba(255, 255, 255, 0.105);
+  color: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: none;
 }
 
 .btn-secondary:hover {
   transform: translateY(-2px);
-
-  border-color: rgba(11, 122, 75, 0.55);
-  background: #f4fffbf1; /* branco com leve verde, NÃO transparente */
-
-  box-shadow: 0 10px 22px rgba(11, 122, 75, 0.14);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
 }
 
 .btn-secondary:active {
   transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(11, 122, 75, 0.1);
 }
 
     .hero-proof {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      color: #465d53;
-      font-size: 0.93rem;
-      font-weight: 700;
-      max-width: 400px;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-start;
     }
 
     .hero-proof span {
+      width: 315px;
+      height: 42px;
+      padding: 0 1rem;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 10px;
+      gap: 0.65rem;
       border-radius: 999px;
-
-      background: rgba(255, 255, 255, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #eaf7f0;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     .hero-proof span::before {
       content: "✓";
-      color: #6ee0a8; /* verde mais visível no escuro */
+      color: #6ee0a8;
       font-weight: 900;
+      flex-shrink: 0;
     }
 
     .hero-card {
@@ -641,7 +648,8 @@ header.scrolled .nav-cta {
     }
 
     .hero-problem {
-  opacity: 0.55;
+  color: rgba(229, 239, 235, 0.54);
+  font-weight: 300;
   }
 
   .solution {
@@ -656,11 +664,10 @@ header.scrolled .nav-cta {
   left: 0%;
   top: 8%;
   height: 85%;
-  background: rgba(0, 194, 122, 0.6);
+  background: linear-gradient(to bottom, #00e89a, rgba(0, 232, 154, 0.35));
   width: 3px;
   border-radius: 2px;
-  border-left: 16px;
-  box-shadow: 0 0 12px rgba(0, 208, 132, 0.25);
+  box-shadow: 0 0 10px rgba(0, 208, 132, 0.18);
   }
 
     .critical-box {
@@ -790,11 +797,7 @@ header.scrolled .nav-cta {
   opacity: 0;
 }
 
-/* hover mais firme nos botões */
-.btn-primary:hover,
-.btn-secondary:hover {
-  transform: translateY(-2px) scale(1.015);
-}
+/* hover individual definido em cada botão */
 
 /* respeita usuários que preferem menos movimento */
 @media (prefers-reduced-motion: reduce) {
@@ -1550,22 +1553,22 @@ ACESSIBILIDADE
       position: fixed;
       right: 22px;
       bottom: 22px;
-      width: 58px;
-      height: 58px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background: #25d366;
+      background: #00b874;
       color: var(--white);
       display: grid;
       place-items: center;
-      font-size: 1.35rem;
-      font-weight: 900;
-      box-shadow: 0 14px 34px rgba(37, 211, 102, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow: 0 14px 34px rgba(0, 184, 116, 0.24);
       z-index: 60;
-      transition: 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .whatsapp-float:hover {
-      transform: translateY(-3px) scale(1.03);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 42px rgba(0, 184, 116, 0.32);
     }
 
     /* #endregion */
@@ -1932,6 +1935,11 @@ ACESSIBILIDADE
 
       .btn-primary,
       .btn-secondary {
+        width: 100%;
+      }
+
+      .hero-proof span {
+        min-width: 0;
         width: 100%;
       }
 
