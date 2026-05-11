@@ -408,18 +408,21 @@
       window.open(url, '_blank', 'noopener');
     }
 
-    // Header scroll
+    // Header scroll — 3 estados
     const header = document.querySelector("header");
 
-    window.addEventListener("scroll", () => {
+    function updateHeader() {
       const y = window.scrollY;
-      header.classList.remove("mid", "scrolled");
-      if (y > 300) {
+      header.classList.remove("is-floating", "scrolled");
+      if (y > 220) {
         header.classList.add("scrolled");
-      } else if (y > 40) {
-        header.classList.add("mid");
+      } else if (y > 24) {
+        header.classList.add("is-floating");
       }
-    });
+    }
+
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
 
   document.addEventListener("DOMContentLoaded", () => {
   const clientesSection = document.querySelector(".clientes-section");
