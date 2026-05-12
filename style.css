@@ -1624,7 +1624,7 @@ ACESSIBILIDADE
     }
 
     .dif-card p {
-      color: #b8cec7;
+      color: #c6d8d1;
       font-size: 0.92rem;
       line-height: 1.58;
     }
@@ -1880,7 +1880,7 @@ ACESSIBILIDADE
   color: var(--green-800);
   font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   margin-bottom: 6px;
 }
