@@ -1176,8 +1176,8 @@ ACESSIBILIDADE
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(15, 139, 99, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 139, 99, 0.035) 1px, transparent 1px);
+        linear-gradient(rgba(15, 139, 99, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 139, 99, 0.022) 1px, transparent 1px);
       background-size: 44px 44px;
       pointer-events: none;
     }
@@ -1190,7 +1190,20 @@ ACESSIBILIDADE
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 14px;
+    }
+
+    .srv-card-reveal {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .srv-card-reveal .service-card {
+      flex: 1;
+    }
+
+    .srv-photo-reveal {
+      display: block;
     }
 
     .service-card {
@@ -1204,8 +1217,8 @@ ACESSIBILIDADE
       -webkit-backdrop-filter: blur(8px);
       border: 1px solid rgba(20, 70, 50, 0.09);
       border-radius: var(--radius-lg);
-      padding: 28px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 0 rgba(255,255,255,0.6) inset;
+      padding: 20px 22px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), 0 1px 0 rgba(255,255,255,0.6) inset;
       transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
       overflow: hidden;
     }
@@ -1216,8 +1229,14 @@ ACESSIBILIDADE
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: linear-gradient(to right, #0f8b63, transparent);
+      height: 2px;
+      background: linear-gradient(to right, rgba(11, 122, 75, 0.55), transparent 70%);
+      transition: opacity 0.22s ease;
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+      background: linear-gradient(to right, rgba(11, 122, 75, 0.80), transparent 70%);
     }
 
     .service-card:hover {
@@ -1227,39 +1246,54 @@ ACESSIBILIDADE
     }
 
     .service-card h3 {
-      margin: 16px 0 10px;
+      margin: 12px 0 7px;
       color: var(--green-900);
-      font-size: 1.14rem;
+      font-size: 1.06rem;
       line-height: 1.25;
     }
 
     .service-card p {
       color: #596d63;
-      font-size: 0.97rem;
+      font-size: 0.92rem;
     }
 
     .service-card .icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: rgba(15, 139, 99, 0.08);
-      border: 1px solid rgba(15, 139, 99, 0.12);
+      position: absolute;
+      top: 18px;
+      right: 18px;
       color: var(--green-600);
-      display: grid;
-      place-items: center;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.60rem;
       font-family: 'Courier New', Courier, monospace;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.06em;
+      opacity: 0.18;
+    }
+
+    .service-icon-wrap {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(11, 122, 75, 0.07);
+      border: 1px solid rgba(11, 122, 75, 0.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      color: var(--green-600);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 4px rgba(11, 122, 75, 0.07);
+      transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .service-card:hover .service-icon-wrap {
+      background: rgba(11, 122, 75, 0.12);
+      border-color: rgba(11, 122, 75, 0.22);
+      color: var(--green-500);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 2px 8px rgba(11, 122, 75, 0.13);
     }
 
     .card-icon {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      color: var(--green-600);
-      opacity: 0.13;
       pointer-events: none;
+      flex-shrink: 0;
     }
 
     /* --- Services two-column layout + photo card --- */
@@ -1272,7 +1306,11 @@ ACESSIBILIDADE
     }
 
     #servicos .section-header {
-      margin-bottom: 44px;
+      margin-bottom: 52px;
+    }
+
+    #servicos .section-header h2 {
+      font-size: clamp(1.65rem, 2.8vw, 2.6rem);
     }
 
     .services-photo-card {
@@ -1303,7 +1341,7 @@ ACESSIBILIDADE
       object-fit: cover;
       object-position: center 22%;
       display: block;
-      filter: contrast(1.08) saturate(0.96) brightness(0.94);
+      filter: contrast(1.06) saturate(0.90) brightness(0.95);
       transition: filter 0.5s ease;
     }
 
@@ -1316,17 +1354,17 @@ ACESSIBILIDADE
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 64px 20px 22px;
+      padding: 68px 20px 22px;
       background: linear-gradient(
         to top,
-        rgba(3, 11, 8, 0.82) 0%,
-        rgba(3, 11, 8, 0.52) 40%,
-        rgba(3, 11, 8, 0.18) 68%,
+        rgba(3, 11, 8, 0.86) 0%,
+        rgba(3, 11, 8, 0.56) 42%,
+        rgba(3, 11, 8, 0.16) 68%,
         transparent 100%
       );
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 0;
       pointer-events: none;
     }
 
@@ -1334,26 +1372,29 @@ ACESSIBILIDADE
       position: absolute;
       top: 14px;
       left: 14px;
-      background: rgba(8, 18, 14, 0.44);
+      background: rgba(8, 18, 14, 0.30);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      color: rgba(180, 215, 198, 0.82);
-      font-size: 0.60rem;
+      color: rgba(180, 215, 198, 0.62);
+      font-size: 0.55rem;
       font-weight: 600;
-      letter-spacing: 0.11em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      padding: 6px 12px;
-      border-radius: 6px;
-      border: 1px solid rgba(110, 224, 168, 0.13);
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid rgba(110, 224, 168, 0.08);
       pointer-events: none;
       z-index: 2;
       transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
     .services-photo-card figcaption strong {
       display: block;
       color: rgba(255, 255, 255, 1);
-      font-size: 0.90rem;
+      font-size: 0.88rem;
       font-weight: 700;
       letter-spacing: 0.01em;
       line-height: 1.25;
@@ -1362,10 +1403,11 @@ ACESSIBILIDADE
 
     .services-photo-card figcaption span {
       display: block;
-      color: rgba(210, 232, 220, 0.92);
-      font-size: 0.82rem;
-      line-height: 1.5;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+      color: rgba(218, 236, 225, 0.84);
+      font-size: 0.78rem;
+      line-height: 1.4;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.40);
     }
 
     .services-photo-col {
@@ -1373,41 +1415,43 @@ ACESSIBILIDADE
     }
 
     .ortosintese-badge {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border: 1px solid rgba(11, 122, 75, 0.14);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.72);
+      margin-top: 10px;
+      padding: 12px 16px;
+      border: 1px solid rgba(11, 122, 75, 0.11);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.68);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 14px 35px rgba(8, 28, 22, 0.06);
+      box-shadow: 0 4px 16px rgba(8, 28, 22, 0.05);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .ortosintese-badge__text span {
-      display: block;
-      font-size: 0.68rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.62rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: #0b7a4b;
       font-weight: 700;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .ortosintese-badge__text strong {
       display: block;
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       color: #10291f;
       font-weight: 800;
     }
 
     .ortosintese-badge__logo {
-      max-width: 120px;
-      max-height: 36px;
+      max-width: 96px;
+      max-height: 30px;
       object-fit: contain;
       flex-shrink: 0;
     }
@@ -1827,8 +1871,8 @@ ACESSIBILIDADE
  /* #region CSS-OUTCOME */
 .outcome-section {
   background:
-    radial-gradient(ellipse at 72% 50%, rgba(228, 241, 235, 0.85) 0%, transparent 62%),
-    linear-gradient(175deg, var(--bg) 0%, var(--surface) 100%);
+    radial-gradient(ellipse at 72% 50%, rgba(228, 241, 235, 0.60) 0%, transparent 58%),
+    linear-gradient(175deg, #ffffff 0%, var(--bg) 100%);
   padding: 108px 0;
   border-top: 1px solid var(--surface-deep);
 }
