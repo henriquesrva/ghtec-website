@@ -33,8 +33,9 @@
 
       <nav aria-label="Navegação principal">
         <a href="#clientes">Clientes</a>
-        <a href="#servicos">Serviços</a>
+        <a href="#output">Prioridade</a>
         <a href="#diferenciais">Diferenciais</a>
+        <a href="#servicos">Serviços</a>
         <a href="#contato">Contato</a>
         <a class="nav-cta" href="https://wa.me/5531999999999" target="_blank" rel="noopener">Atendimento</a>
       </nav>
@@ -67,7 +68,7 @@
             <a class="btn-primary" href="https://wa.me/5531999999999" target="_blank" rel="noopener">
               Solicitar atendimento técnico
             </a>
-            <a class="btn-secondary" href="#servicos">Conhecer soluções</a>
+            <a class="btn-secondary" href="#clientes">Conhecer a GHTEC</a>
           </div>
 
           <div class="hero-proof" aria-label="Principais benefícios">
@@ -90,7 +91,7 @@
 
           <div class="trust-metrics" aria-label="Indicadores de confiança">
             <div class="trust-metric">
-              <strong>+80</strong>
+              <strong data-stat="hospitais">+80</strong>
               <span>hospitais, clínicas e operações atendidas</span>
             </div>
             <div class="trust-metric">
@@ -152,10 +153,10 @@
    <!-- #endregion CLIENTES -->
 
     <!-- #region RESULTADO NA OPERAÇÃO -->
-    <section class="outcome-section">
+    <section class="outcome-section" id="output">
       <div class="container outcome-grid">
         <div class="outcome-copy">
-          <span>Continuidade Operacional</span>
+          <span>Prioridade - Continuidade Operacional</span>
           <h2>O hospital opera porque a CME opera.</h2>
           <p>
             Uma falha na CME impacta diretamente o centro cirúrgico. Mantemos a continuidade técnica
@@ -212,13 +213,13 @@
           </div>
           <div class="dif-stats">
             <div class="dif-stat">
-              <strong>+20 anos</strong>
+              <strong data-stat="anos">+20 anos</strong>
               <span>Experiência técnica da equipe</span>
             </div>
             <div class="dif-stat-sep"></div>
             <div class="dif-stat">
-              <strong>&lt; 24h</strong>
-              <span>Resposta média</span>
+              <strong data-stat="horas">&lt; 24h</strong>
+              <span>Solução média</span>
             </div>
           </div>
         </div>
@@ -261,53 +262,72 @@
 <!-- #region SERVIÇOS -->
     <section id="servicos" class="section">
       <div class="container">
-        <div class="section-header">
-          <span>Serviços</span>
-          <h2>Soluções técnicas para manter operações hospitalares críticas em funcionamento.</h2>
-          <p>
-            Equipamentos essenciais exigem resposta técnica rápida, previsibilidade operacional e suporte confiável.
-          </p>
-        </div>
+        <div class="services-layout">
 
-        <div class="services-grid">
-          <article class="service-card">
-            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
-            <div class="icon">01</div>
-            <h3>Correção de falhas críticas</h3>
-            <p>Diagnóstico e reparo técnico com foco em agilidade operacional e segurança hospitalar.</p>
-          </article>
+          <div class="services-content">
+            <div class="section-header">
+              <span>Serviços</span>
+              <h2>Engenharia técnica aplicada à rotina hospitalar.</h2>
+              <p>
+                Atendimento técnico, manutenção e suporte para equipamentos hospitalares críticos.
+              </p>
+            </div>
 
-          <article class="service-card">
-            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-            </svg>
-            <div class="icon">02</div>
-            <h3>Preventiva programada</h3>
-            <p>Inspeções, testes e ajustes para reduzir paradas e prolongar a vida útil dos equipamentos.</p>
-          </article>
+            <div class="services-grid">
+              <article class="service-card">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+                <div class="icon">01</div>
+                <h3>Correção de falhas críticas</h3>
+                <p>Diagnóstico e reparo técnico para restabelecer operação com segurança.</p>
+              </article>
 
-          <article class="service-card">
-            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/>
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-              <line x1="12" y1="22.08" x2="12" y2="12"/>
-            </svg>
-            <div class="icon">03</div>
-            <h3>Peças e componentes</h3>
-            <p>Fornecimento e substituição de peças técnicas com orientação para evitar retrabalho.</p>
-          </article>
+              <article class="service-card">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+                <div class="icon">02</div>
+                <h3>Preventiva programada</h3>
+                <p>Inspeções, testes e ajustes para reduzir falhas e prolongar a vida útil.</p>
+              </article>
 
-          <article class="service-card">
-            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-            <div class="icon">04</div>
-            <h3>Suporte técnico especializado</h3>
-            <p>Apoio para avaliar demandas, orientar decisões e resolver problemas técnicos com clareza.</p>
-          </article>
+              <article class="service-card">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/>
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+                <div class="icon">03</div>
+                <h3>Peças e componentes</h3>
+                <p>Fornecimento e substituição técnica com orientação para evitar retrabalho.</p>
+              </article>
+
+              <article class="service-card">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <div class="icon">04</div>
+                <h3>Suporte técnico especializado</h3>
+                <p>Apoio para avaliar demandas, orientar decisões e resolver problemas com clareza.</p>
+              </article>
+            </div>
+          </div>
+
+          <figure class="services-photo-card">
+            <img
+              src="assets/fotos/tecnico.webp"
+              alt="Eng. Erick Guimarães em atendimento técnico no Hospital Forma"
+              loading="lazy"
+            >
+            <div class="services-photo-badge">Campo real · Hospital Forma</div>
+            <figcaption>
+              <strong>Manutenção técnica em campo</strong>
+              <span>Eng. Erick Guimarães no Hospital Forma.</span>
+            </figcaption>
+          </figure>
+
         </div>
       </div>
     </section>
@@ -332,16 +352,29 @@
       <div class="container">
         <div class="contact-box">
           <div class="contact-info">
-            <h3>Solicite atendimento técnico</h3>
+            <h3>Solicite atendimento técnico ou fale sobre contrato</h3>
             <p>
-              Envie sua demanda para manutenção, orçamento, peças ou suporte. Quanto mais detalhes você mandar,
-              mais rápido conseguimos orientar o próximo passo.
+              Envie sua demanda, equipamento ou necessidade da CME. Nossa equipe avalia o cenário e orienta o melhor próximo passo.
             </p>
 
             <ul class="contact-list">
-              <li><strong>WhatsApp:</strong> (31) 99999-9999</li>
-              <li><strong>E-mail:</strong> contato@ghtecmg.com.br</li>
-              <li><strong>Atendimento:</strong> Minas Gerais e demais regiões sob consulta</li>
+              <li>
+                <svg class="contact-card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <strong>WhatsApp</strong>
+                <span class="contact-list-desc">Atendimento técnico e contratos</span>
+                <span class="contact-list-value">(31) 9 9999-9999</span>
+              </li>
+              <li>
+                <svg class="contact-card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <strong>E-mail</strong>
+                <span class="contact-list-desc">Propostas, documentos e solicitações formais</span>
+                <span class="contact-list-value">contato@ghtecmg.com.br</span>
+              </li>
+              <li>
+                <svg class="contact-card-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <strong>Área de atendimento</strong>
+                <span class="contact-list-desc">Minas Gerais e demandas sob consulta</span>
+              </li>
             </ul>
           </div>
 
@@ -349,8 +382,8 @@
             <input type="text" id="nome" placeholder="Seu nome" required />
             <input type="text" id="empresa" placeholder="Empresa / instituição" />
             <input type="tel" id="telefone" placeholder="Telefone" />
-            <textarea id="mensagem" placeholder="Descreva o equipamento, defeito ou peça necessária" required></textarea>
-            <button class="btn-primary" type="submit">Enviar pelo WhatsApp</button>
+            <textarea id="mensagem" placeholder="Informe o equipamento, necessidade da CME, defeito apresentado, peça necessária ou urgência da demanda" required></textarea>
+            <button class="btn-primary" type="submit">Encaminhar demanda para nossa equipe</button>
           </form>
         </div>
       </div>
@@ -372,9 +405,9 @@
     <div class="container">
       <p>© 2026 GHTec. Assistência técnica hospitalar.</p>
       <div class="dev-credit">
-          <a href="https://www.linkedin.com/in/henrique-saraiva-0bb06a322/" target="_blank">
+        <a href="https://www.linkedin.com/in/henrique-saraiva-0bb06a322/" target="_blank">
           Desenvolvido por Henrique Saraiva
-      </a>
+        </a>
       </div>
     </div>
   </footer>
@@ -469,6 +502,88 @@
     });
 
     outcomeObserver.observe(outcomeSection);
+  });
+
+  // Clientes — animação do contador +80
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const clientesSection = document.querySelector(".clientes-section");
+    if (!clientesSection) return;
+
+    const hospitaisEl = clientesSection.querySelector('[data-stat="hospitais"]');
+    if (!hospitaisEl) return;
+
+    const hospitaisObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        hospitaisObserver.unobserve(clientesSection);
+
+        const diff = 80;
+        const duration = 1820;
+        const startTime = performance.now();
+        function tick(now) {
+          const t = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - t, 3);
+          hospitaisEl.textContent = `+${Math.round(diff * eased)}`;
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+    hospitaisObserver.observe(clientesSection);
+  });
+
+  // Diferenciais — animação dos números estatísticos
+  document.addEventListener("DOMContentLoaded", () => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const difSection = document.querySelector(".diferenciais-section");
+    if (!difSection) return;
+
+    const anosEl  = difSection.querySelector('[data-stat="anos"]');
+    const horasEl = difSection.querySelector('[data-stat="horas"]');
+
+    // Prepara o estado inicial do fade-in do "<24h" via JS
+    // (evita ocultar via CSS puro, preservando acessibilidade sem JS)
+    if (!reducedMotion && horasEl) {
+      horasEl.style.opacity = "0";
+      horasEl.style.transform = "translateY(7px)";
+      horasEl.style.transition = "opacity 0.72s ease, transform 0.72s ease";
+    }
+
+    if (reducedMotion) return;
+
+    function animateNumber(el, start, end, duration, formatter) {
+      const diff = end - start;
+      const startTime = performance.now();
+      function tick(now) {
+        const t = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+        el.textContent = formatter(Math.round(start + diff * eased));
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const difObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        difObserver.unobserve(difSection);
+
+        if (anosEl) animateNumber(anosEl, 0, 20, 1820, n => `+${n} anos`);
+
+        if (horasEl) {
+          setTimeout(() => {
+            horasEl.style.opacity = "1";
+            horasEl.style.transform = "translateY(0)";
+          }, 440);
+        }
+      });
+    }, { threshold: 0.25, rootMargin: "0px 0px -6% 0px" });
+
+    difObserver.observe(difSection);
   });
 
   </script>
