@@ -929,12 +929,14 @@ header.scrolled .nav-cta {
   border: 1px solid rgba(11, 122, 75, 0.10);
   border-radius: 22px;
   background:
-  linear-gradient(
-    180deg,
-    rgba(255,255,255,0.34),
-    rgba(255,255,255,0.14)
-  ),
-  rgba(255,255,255,0.12);
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.34),
+      rgba(255,255,255,0.14)
+    ),
+    radial-gradient(circle at 1px 1px, rgba(11, 122, 75, 0.048) 1px, transparent 0),
+    rgba(255,255,255,0.12);
+  background-size: auto, 20px 20px;
   box-shadow:
     0 24px 70px rgba(6, 39, 29, 0.055),
     inset 0 1px 0 rgba(255,255,255,0.55);
@@ -945,15 +947,15 @@ header.scrolled .nav-cta {
 .clientes-wrapper::after {
   content: "";
   position: absolute;
-  top: 28px;
-  bottom: 28px;
+  top: 8%;
+  bottom: 8%;
   left: calc(67%);
-  width: 2px;
+  width: 1.8px;
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(11, 122, 75, 0.42) 16%,
-    rgba(11, 122, 75, 0.25) 74%,
+    rgba(11, 122, 75, 0.20) 38%,
+    rgba(11, 122, 75, 0.16) 68%,
     transparent 100%
   );
   pointer-events: none;
@@ -1047,16 +1049,34 @@ header.scrolled .nav-cta {
 }
 
 .cliente-card:hover {
-  transform: translateY(-1px);
-  border-color: rgba(11, 122, 75, 0.22);
+  transform: translateY(-3px);
+  border-color: rgba(0, 140, 90, 0.35);
   background: rgba(255, 255, 255, 0.985);
-  box-shadow: 0 10px 24px rgba(6, 39, 29, 0.045);
+  box-shadow: 0 12px 32px rgba(0, 70, 45, 0.08);
+}
+
+.cliente-card:hover::before {
+  opacity: 0.6;
 }
 
 .cliente-card:hover img {
   filter: saturate(1.015) contrast(1.015);
   opacity: 1;
   transform: scale(1.008);
+}
+
+/* ---- Frase institucional de fechamento ---- */
+
+.clientes-footer-phrase {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(11, 122, 75, 0.09);
+  text-align: center;
+  color: #5a7a6a;
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.62;
 }
 
 /* ========================================================= */
@@ -1344,6 +1364,50 @@ ACESSIBILIDADE
       text-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
     }
 
+    .services-photo-col {
+      transform: translateY(+4%);
+    }
+
+    .ortosintese-badge {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(11, 122, 75, 0.14);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 14px 35px rgba(8, 28, 22, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .ortosintese-badge__text span {
+      display: block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #0b7a4b;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .ortosintese-badge__text strong {
+      display: block;
+      font-size: 0.92rem;
+      color: #10291f;
+      font-weight: 800;
+    }
+
+    .ortosintese-badge__logo {
+      max-width: 120px;
+      max-height: 36px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
     .feature-card {
       position: relative;
       background: var(--white);
@@ -1497,7 +1561,13 @@ ACESSIBILIDADE
       gap: 18px;
     }
 
+    .dif-card-reveal {
+      display: flex;
+      flex-direction: column;
+    }
+
     .dif-card {
+      flex: 1;
       background: rgba(10, 36, 28, 0.35);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -1514,14 +1584,27 @@ ACESSIBILIDADE
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 2px;
-      background: linear-gradient(to right, rgba(110, 224, 168, 0.45), transparent);
+      background: linear-gradient(to right, rgba(110, 224, 168, 0.75), rgba(110, 224, 168, 0.22), transparent);
+      opacity: 0;
+      transform: scaleX(0.3);
+      transform-origin: left;
+      transition: opacity 0.32s ease, transform 0.44s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .dif-card:hover::before {
+      opacity: 1;
+      transform: scaleX(1);
     }
 
     .dif-card:hover {
-      transform: translateY(-3px);
-      background: rgba(255, 255, 255, 0.09);
-      border-color: rgba(110, 224, 168, 0.22);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.095);
+      border-color: rgba(110, 224, 168, 0.28);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.20), 0 0 20px rgba(110, 224, 168, 0.055);
+    }
+
+    .dif-card:hover .dif-card-icon {
+      opacity: 0.95;
     }
 
     .dif-card-icon {
@@ -1529,6 +1612,7 @@ ACESSIBILIDADE
       opacity: 0.72;
       margin-bottom: 14px;
       display: block;
+      transition: opacity 0.22s ease;
     }
 
     .dif-card h3 {
@@ -2168,6 +2252,10 @@ ACESSIBILIDADE
     gap: 42px;
   }
 
+  .clientes-wrapper::after {
+    display: none;
+  }
+
   .clientes-bloco-operadoras {
     padding-left: 0;
     border-left: none;
@@ -2223,6 +2311,11 @@ ACESSIBILIDADE
 
   .cliente-card:hover img {
     transform: none;
+  }
+
+  .clientes-footer-phrase {
+    font-size: 0.78rem;
+    padding-top: 14px;
   }
 
   .representacao-card {
