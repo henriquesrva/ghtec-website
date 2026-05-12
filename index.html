@@ -31,7 +31,7 @@
         <img src="./assets/logoGHTEC.png" alt="GHTec" class="logo-img">
       </a>
 
-      <nav aria-label="Navegação principal">
+      <nav id="main-nav" aria-label="Navegação principal">
         <a href="#clientes">Clientes</a>
         <a href="#output">Prioridade</a>
         <a href="#diferenciais">Diferenciais</a>
@@ -39,7 +39,12 @@
         <a href="#contato">Contato</a>
         <a class="nav-cta" href="https://wa.me/5531999999999" target="_blank" rel="noopener">Atendimento</a>
       </nav>
-      
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
   <!-- #endregion HEADER / NAVBAR -->
@@ -461,6 +466,28 @@
       }, 3000);
 
       window.open(url, '_blank', 'noopener');
+    }
+
+    // Hamburger menu toggle
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mainNav = document.getElementById('main-nav');
+
+    if (hamburgerBtn && mainNav) {
+      hamburgerBtn.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('open');
+        hamburgerBtn.classList.toggle('open', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+        document.body.classList.toggle('menu-open', isOpen);
+      });
+
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('open');
+          hamburgerBtn.classList.remove('open');
+          hamburgerBtn.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('menu-open');
+        });
+      });
     }
 
     // Header scroll — 3 estados

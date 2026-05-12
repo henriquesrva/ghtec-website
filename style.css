@@ -384,6 +384,10 @@ header.scrolled .nav-cta {
   box-shadow: 0 6px 18px rgba(0, 127, 80, 0.14);
 }
 
+.hamburger {
+  display: none;
+}
+
 /* #endregion */
 
 /* ---------------------------------------- *//* ---------------------------------------- */
@@ -2154,6 +2158,10 @@ ACESSIBILIDADE
         gap: 36px;
       }
 
+      .services-photo-col {
+        transform: none;
+      }
+
       .services-photo-card img {
         height: 360px;
         object-position: center 18%;
@@ -2179,6 +2187,10 @@ ACESSIBILIDADE
 
       .hero h1 {
         letter-spacing: -1.4px;
+      }
+
+      .hero-solution {
+        font-size: clamp(2.8rem, 9vw, 3.5rem);
       }
 
       .hero p {
@@ -2272,6 +2284,11 @@ ACESSIBILIDADE
 
 /* MOBILE-CLIENTES */
 @media (max-width: 640px) {
+  .trust-metrics {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
   .clientes-section {
     padding: 64px 0 72px;
   }
