@@ -614,7 +614,7 @@ header.scrolled .nav-cta {
     }
 
     .hero-proof span {
-      width: 270px;
+      width: 280px;
       height: 42px;
       padding: 0 1rem;
       display: inline-flex;
@@ -954,7 +954,7 @@ header.scrolled .nav-cta {
   top: 8%;
   bottom: 8%;
   left: calc(67%);
-  width: 1.8px;
+  width: 2px;
   background: linear-gradient(
     to bottom,
     transparent 0%,
@@ -1416,9 +1416,9 @@ ACESSIBILIDADE
 
     .ortosintese-badge {
       margin-top: 10px;
-      padding: 12px 16px;
+      padding: 15px 21px;
       border: 1px solid rgba(11, 122, 75, 0.11);
-      border-radius: 12px;
+      border-radius: 15px;
       background: rgba(255, 255, 255, 0.68);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -1426,7 +1426,7 @@ ACESSIBILIDADE
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
@@ -1434,24 +1434,24 @@ ACESSIBILIDADE
       display: flex;
       align-items: center;
       gap: 4px;
-      font-size: 0.62rem;
+      font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: #0b7a4b;
       font-weight: 700;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .ortosintese-badge__text strong {
       display: block;
-      font-size: 0.88rem;
+      font-size: 1.17rem;
       color: #10291f;
       font-weight: 800;
     }
 
     .ortosintese-badge__logo {
-      max-width: 96px;
-      max-height: 30px;
+      max-width: 199px;
+      max-height: 62px;
       object-fit: contain;
       flex-shrink: 0;
     }
