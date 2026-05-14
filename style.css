@@ -420,7 +420,7 @@ header.scrolled .nav-cta {
       rgba(0, 20, 15, 0.38) 0%,
       rgba(0, 20, 15, 0.60) 100%
     ),
-    url("./assets/fotos/foto-tecnico-manutencao.png") center right / cover no-repeat;
+    url("./assets/fotos/foto-tecnico-manutencao.webp") center right / cover no-repeat;
 
   padding: 120px 0 120px; /* aumentei um pouco embaixo */
 }
@@ -450,9 +450,10 @@ header.scrolled .nav-cta {
       background: linear-gradient(
         to bottom,
         rgba(7, 19, 15, 0) 0%,
-        rgba(15, 31, 25, 0.12) 24%,
-        rgba(233, 240, 237, 0.72) 70%,
-        #e9f0ed 100%
+        rgba(15, 31, 25, 0.06) 20%,
+        rgba(232, 240, 236, 0.52) 52%,
+        rgba(232, 240, 236, 0.88) 76%,
+        #e8f0ec 100%
       );
     }
 
@@ -773,13 +774,28 @@ header.scrolled .nav-cta {
   }
 }
 
+@keyframes heroLineRevealH {
+  from {
+    opacity: 0;
+    transform: scaleX(0.15);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
 /* estado inicial */
 .hero .hero-solution,
 .hero .hero-subtitle,
-.hero .hero-actions,
-.hero .hero-proof {
+.hero .hero-actions {
   opacity: 0;
   animation: heroFadeUp 1.4s cubic-bezier(0.22, 0.7, 0.2, 1) forwards;
+}
+
+.hero .hero-proof span {
+  opacity: 0;
+  animation: heroFadeUp 1.1s cubic-bezier(0.22, 0.7, 0.2, 1) forwards;
 }
 
 .hero .hero-problem {
@@ -798,7 +814,8 @@ header.scrolled .nav-cta {
 .hero .hero-solution { animation-delay: 0.24s; }
 .hero .hero-subtitle { animation-delay: 0.40s; }
 .hero .hero-actions { animation-delay: 0.48s; }
-.hero .hero-proof { animation-delay: 0.70s; }
+.hero .hero-proof span:nth-child(1) { animation-delay: 1.05s; }
+.hero .hero-proof span:nth-child(2) { animation-delay: 1.50s; }
 
 /* linha verde da solução entrando com controle */
 .solution::before {
@@ -817,7 +834,7 @@ header.scrolled .nav-cta {
   .hero .hero-solution,
   .hero .hero-subtitle,
   .hero .hero-actions,
-  .hero .hero-proof,
+  .hero .hero-proof span,
   .solution::before {
     animation: none;
     opacity: 1;
@@ -834,7 +851,7 @@ header.scrolled .nav-cta {
 .clientes-section {
   position: relative;
   z-index: 5;
-  padding: 82px 0 116px;
+  padding: 53px 0 87px;
   background:
     radial-gradient(circle at 50% -10%, rgba(11, 122, 75, 0.17), transparent 42%),
     radial-gradient(circle at 18% 70%, rgba(255,255,255,0.9), transparent 36%),
@@ -852,7 +869,7 @@ header.scrolled .nav-cta {
     linear-gradient(rgba(11, 122, 75, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(11, 122, 75, 0.04) 1px, transparent 1px);
   background-size: 42px 42px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.42), transparent 78%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.42) 22%, transparent 78%);
   pointer-events: none;
 }
 
@@ -864,7 +881,7 @@ header.scrolled .nav-cta {
   width: min(980px, 92vw);
   height: 1px;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, rgba(11,122,75,0.34), transparent);
+  background: linear-gradient(90deg, transparent, rgba(11,122,75,0.16), transparent);
   pointer-events: none;
 }
 
@@ -2227,14 +2244,53 @@ ACESSIBILIDADE
 
       .hero {
         min-height: auto;
+        background-position: center center;
+      }
+
+      .eyebrow {
+        display: flex;
+        width: fit-content;
+        font-size: 0.62rem;
+        padding: 4px 9px;
+        gap: 6px;
+        margin-inline: auto;
+        margin-top: 16px;
       }
 
       .hero h1 {
         letter-spacing: -1.4px;
+        text-align: center;
       }
 
       .hero-solution {
         font-size: clamp(2.8rem, 9vw, 3.5rem);
+        text-align: center;
+        padding-left: 0;
+        margin-inline: auto;
+      }
+
+      .hero-solution::before {
+        display: block;
+        left: 24%;
+        top: auto;
+        bottom: -8px;
+        width: 52%;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          rgba(0, 232, 154, 0.35),
+          #00e89a 40%,
+          rgba(0, 232, 154, 0.45) 60%,
+          rgba(0, 232, 154, 0.35)
+        );
+        box-shadow: 0 0 10px rgba(0, 208, 132, 0.18);
+        transform-origin: center;
+        animation: heroLineRevealH 0.7s ease 0.45s forwards;
+      }
+
+      .hero-proof {
+        align-items: center;
+        width: 100%;
       }
 
       .hero p {
@@ -2249,6 +2305,7 @@ ACESSIBILIDADE
       .hero-proof span {
         min-width: 0;
         width: 100%;
+        justify-content: center;
       }
 
       .services-grid,
@@ -2286,6 +2343,22 @@ ACESSIBILIDADE
         padding: 66px 0;
       }
 
+      .outcome-section {
+        padding: 68px 0;
+      }
+
+      .outcome-visual img {
+        height: 240px;
+      }
+
+      .contact-info h3 {
+        font-size: 1.25rem;
+      }
+
+      .cta-strip h2 {
+        font-size: 1.35rem;
+      }
+
       .carousel img {
         height: 76px;
         width: 150px;
@@ -2298,6 +2371,30 @@ ACESSIBILIDADE
       .whatsapp-float {
         right: 16px;
         bottom: 16px;
+      }
+
+      #output .outcome-copy > span {
+        display: block;
+        text-align: center;
+      }
+
+      #output .outcome-copy > span::before {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      #servicos .section-header span,
+      .dif-header span {
+        display: flex;
+        justify-content: center;
+      }
+
+      .outcome-copy h2,
+      .dif-header h2,
+      #servicos .section-header h2 {
+        text-align: center;
+        margin-inline: auto;
       }
     }
     /* RESPONSIVIDADE-CLIENTES */
@@ -2331,6 +2428,10 @@ ACESSIBILIDADE
   .trust-metrics {
     grid-template-columns: 1fr;
     max-width: 100%;
+  }
+
+  .trust-metric {
+    text-align: center;
   }
 
   .clientes-section {
@@ -2393,7 +2494,6 @@ ACESSIBILIDADE
 
 /* MOBILE PEQUENO-CLIENTES */
 @media (max-width: 390px) {
-  .clientes-grid,
   .clientes-grid-operadoras {
     grid-template-columns: 1fr;
   }
